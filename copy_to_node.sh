@@ -18,4 +18,7 @@ for ip in ${HOSTS_PRIVATE[@]}; do
     upload $ip tools
 done
 
-upload ${HOST_YCSB} go1.19.linux-amd64.tar.gz
+# upload ${HOST_YCSB} go1.19.linux-amd64.tar.gz
+
+upload ${HOST_YCSB} go-ycsb
+upload ${HOST_YCSB} workloads
