@@ -12,5 +12,6 @@ echo "run workloadd ..."
     -p tikv.pd="${HOST_PD}:2379" \
     -p tikv.type="raw" \
     -p recordcount=${RECORD_COUNT} \
+    -p insertcount=${INSERT_COUNT} \
     -p operationcount=${OPERATION_COUNT} |
     tee ${TEST_NAME}.${THREAD_COUNT}.workloadd.log

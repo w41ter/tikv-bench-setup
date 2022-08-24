@@ -11,5 +11,5 @@ echo "run workloadf ..."
     -p tikv.type="raw" \
     -p recordcount=${RECORD_COUNT} \
     -p operationcount=${OPERATION_COUNT} \
-    -p requestdistribution=zipfan |
+    -p requestdistribution=zipfian |
     tee ${TEST_NAME}.${THREAD_COUNT}.workloadf.log
