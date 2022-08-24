@@ -14,4 +14,4 @@ for host in ${HOSTS_PRIVATE[@]}; do
 done
 wait
 
-ssh ${USER}@${HOST_YCSB} ''
+# ssh ${USER}@${HOST_YCSB} ''

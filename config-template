@@ -1,5 +1,8 @@
 USER=root
 
+# base mountpoint of tikv nodes
+MOUNT=
+
 # Central control host
 HOST_CENTRAL=
 HOST_CENTRAL_PRIVATE=

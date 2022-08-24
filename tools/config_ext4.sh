@@ -25,6 +25,8 @@ function remount() {
     mount -o${options},remount ${point}
 }
 
+cp /etc/fstab /etc/fstab.bak
+
 for DEV in $( mount | grep ext4 | awk '{print $1}' | fgrep /dev/ ); do
     PUREDEV=$( echo $DEV | cut -d/ -f3- )
     UUIDIS=$( ls -l /dev/disk/by-uuid/ | fgrep $PUREDEV | awk '{print $9}' )
@@ -33,5 +35,7 @@ for DEV in $( mount | grep ext4 | awk '{print $1}' | fgrep /dev/ ); do
     left=$(cat /etc/mtab | grep ${DEV} | awk '{ $1=""; print $0 }')
     echo "UUID=${UUIDIS} ${left}" >> /etc/fstab
 done
+
+# echo `blkid /dev/vdb1 | awk '{print $2}' | sed 's/\"//g'` /mnt ext4 rw,noatime,nodelalloc,errors=remount-ro 0 0 >> /etc/fstab
 
 systemctl daemon-reload

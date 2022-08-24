@@ -22,3 +22,4 @@ done
 
 upload ${HOST_YCSB} go-ycsb
 upload ${HOST_YCSB} workloads
+upload ${HOST_YCSB} bench

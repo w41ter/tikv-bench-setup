@@ -8,6 +8,7 @@ TOPO=topology.yaml
 function generate_tikv_servers() {
     for host in ${HOST_TIKV_NODES[@]}; do
         echo "  - host: ${host}"
+        echo "    data_dir: ${MOUNT}/tidb-data"
     done
 }
 
@@ -23,9 +24,9 @@ pd_servers:
 tikv_servers:
 $(generate_tikv_servers)
 monitoring_servers:
-  - host: ${HOST_CENTRAL}
+  - host: ${HOST_CENTRAL_PRIVATE}
 grafana_servers:
-  - host: ${HOST_CENTRAL}
+  - host: ${HOST_CENTRAL_PRIVATE}
 alertmanager_servers:
   - host: ${HOST_CENTRAL_PRIVATE}
 

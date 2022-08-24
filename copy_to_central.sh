@@ -19,3 +19,4 @@ upload tools
 # upload go1.19.linux-amd64.tar.gz
 upload go-ycsb/bin/go-ycsb
 upload go-ycsb/workloads
+upload bench
