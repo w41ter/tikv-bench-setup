@@ -9,6 +9,11 @@ ssh-keyscan ${HOST_CENTRAL} >> ~/.ssh/known_hosts; \
 ssh ${USER}@${HOST_CENTRAL} 'if [ ! -f /root/.ssh/id_rsa ]; then ssh-keygen -t rsa -N "" -f /root/.ssh/id_rsa; fi'
 scp ${USER}@${HOST_CENTRAL}:~/.ssh/id_rsa.pub .
 scp ${USER}@${HOST_CENTRAL}:~/.ssh/id_rsa .
+ssh ${USER}@${HOST_CENTRAL} "cat <<EOF >~/.ssh/config
+Host *
+        ServerAliveInterval 3600
+        StrictHostKeyChecking no
+EOF"
 
 for host in ${HOSTS[@]}; do
     ssh ${USER}@${HOST_CENTRAL} "\
