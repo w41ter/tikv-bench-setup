@@ -62,6 +62,13 @@ source config.sh
 ssh ${USER}@${HOST_YCSB}
 ```
 
+Generate `config.sh` according to the template (`bench/config-template`):
+
+```sh
+cp bench/config-template bench/config.sh
+vim config.sh
+```
+
 Do it:
 
 ```sh
