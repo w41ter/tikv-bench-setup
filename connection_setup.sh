@@ -11,7 +11,7 @@ scp ${USER}@${HOST_CENTRAL}:~/.ssh/id_rsa.pub .
 scp ${USER}@${HOST_CENTRAL}:~/.ssh/id_rsa .
 ssh ${USER}@${HOST_CENTRAL} "cat <<EOF >~/.ssh/config
 Host *
-        ServerAliveInterval 3600
+        ServerAliveInterval 30
         StrictHostKeyChecking no
 EOF"
 
